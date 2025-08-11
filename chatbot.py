@@ -102,7 +102,7 @@ def gemini_generate(prompt: str, history: List[Dict[str, str]] = None) -> str:
         return "Sorry, there was an error processing your request."
 
 # Streamlit chatbot UI
-st.title("RAG Chatbot with Gemini")
+st.title("RAG Chatbot")
 
 # Initialize session state for conversation history if it doesn't exist
 if "messages" not in st.session_state:
@@ -158,7 +158,7 @@ if user_input:
     with st.chat_message("assistant"):
         st.markdown(answer)
 
-# Add Delete Chat History Button
+# Delete Chat History Button
 if st.button("Delete Chat History"):
     delete_chat_history()  # Clear chat history from the database
     st.session_state["messages"] = []  # Clear chat history from the session state
